@@ -6,7 +6,11 @@
     <can-import from="~/styles.less" />
     <can-import from="~/app" export-as="viewModel" />
 
-    <h1>{{message}}</h1>
+    <can-import from="~/markdown-editor/" />
+
+    <h1>{{message}} hello</h1>
+
+    <markdown-editor />
 
     {{#switch env.NODE_ENV}}
       {{#case "production"}}

@@ -3,6 +3,8 @@ import QUnit from 'steal-qunit';
 
 import 'devjournal/models/test';
 
+import '~/markdown-editor/markdown-editor-test';
+
 F.attach(QUnit);
 
 QUnit.module('devjournal functional smoke test', {
