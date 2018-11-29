@@ -5,6 +5,8 @@ import 'devjournal/models/test';
 
 import '~/markdown-editor/markdown-editor-test';
 
+import '~/components/html-preview/html-preview-test';
+
 F.attach(QUnit);
 
 QUnit.module('devjournal functional smoke test', {

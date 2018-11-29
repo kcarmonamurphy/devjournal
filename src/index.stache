@@ -7,10 +7,14 @@
     <can-import from="~/app" export-as="viewModel" />
 
     <can-import from="~/markdown-editor/" />
+    <can-import from="~/components/html-preview/" />
 
     <h1>{{message}} hello</h1>
 
-    <markdown-editor />
+    <div class="view-container">
+      <markdown-editor />
+      <html-preview />
+    </div>
 
     {{#switch env.NODE_ENV}}
       {{#case "production"}}
