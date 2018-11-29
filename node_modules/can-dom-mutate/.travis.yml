@@ -1,0 +1,13 @@
+language: node_js
+node_js: node
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+deploy:
+  provider: npm
+  email: core@donejs.com
+  api_key:
+    secure: TjfmaJGnQNfHc/ZgZwUp3NXzcbAceY/ggS7enVm5Mud6YPhN1+kJsZOa8ZK3ZUmMyvC76NN5xWzS5iy7/rRD4MQye79xRAhnR0ysOsLXDH+6g29MJOgWEtIgY3mlC+6n7dpf8buFbgcfQzFUDJ+DLH95eDOV7qgUyO6JuyXCYwH78OT0zpJuAb/tDs3EGDix8pW5N0W5aWUs9XeFHRKt1KJ2BpFcAF0gcSsgFFuGPv3b6u29nSp5lygfhsehZKfrXzvONMTWWxCCf0WfUiU/ETIMvqsT99iovghr6JlVjHTshcdpocQZk4qSVodRdU8FvRE3mD35Ojk3RD7RGVQHE/Dj4QAtOn50sEa5o6Z0dAyBxNdDlmf2SUy7AwcTT/MXdNISbTRkSfWr7qI/jZ5IfnJDqfuPSUPUO+ZN+EO0tqVhHtZTH7CnXhQA8hsN9dLryiKL3J18Ng9pONZ4l/owI2km5LFGIcAAEpfSIm2derphUmttmY12Q6pvSBLR3XxjQi3sGiKmy+BUkmC7K+VFLTcpVLEYMt5U4iO4CXT6FHWt8jIXqfMRThmZTCdF6wkWutz51tF2nCJQitDxFLpAyY2QB1QyARrtxEkcLeS7f3z+UM4lAOZhEIId/LWPJO59QxM3uwD8deNizXydjWRb8OJw05wVen+vnKgJXwEEsb8=
+  on:
+    tags: true
+    repo: canjs/can-dom-mutate

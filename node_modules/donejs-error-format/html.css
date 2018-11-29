@@ -1,0 +1,29 @@
+body {
+	font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+
+main {
+	margin: auto;
+	margin-top: 3rem;
+	width: 980px;
+}
+
+header h1 {
+	font-size: 20px;
+}
+
+.error-message .message {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.code-frame {
+	font-size: 115%;
+}
+
+.code-frame > code {
+	border-radius: 4px;
+}

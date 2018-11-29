@@ -1,25 +1,87 @@
 {
   "name": "devjournal",
-  "version": "0.0.1",
-  "description": "simple daily journal for developers who love markdown",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm test"
-  },
+  "version": "0.0.0",
+  "description": "a simple daily dev journal for developers who love markdown",
+  "homepage": "https://github.com/kevcom/devjournal",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/kevcom/devjournal.git"
+    "url": "git+https://github.com/kevcom/devjournal.git"
   },
+  "author": {
+    "name": "Kevin Carmona-Murphy",
+    "email": "kevcom@live.ca",
+    "url": "kevincarmonamurphy.ca"
+  },
+  "private": true,
+  "scripts": {
+    "test": "testee test.html --browsers firefox --reporter Spec",
+    "start": "done-serve --port 8080",
+    "develop": "done-serve --develop --port 8080",
+    "build": "node build"
+  },
+  "main": "devjournal/index.stache!done-autorender",
+  "files": [
+    "src"
+  ],
   "keywords": [
     "developer",
+    "donejs",
+    "donejs-app",
     "journal",
-    "devjournal",
     "markdown"
   ],
-  "author": "Kevin Carmona-Murphy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kevcom/devjournal/issues"
+  "steal": {
+    "main": "devjournal/index.stache!done-autorender",
+    "directories": {
+      "lib": "src"
+    },
+    "configDependencies": [
+      "live-reload",
+      "node_modules/can-zone/register",
+      "node_modules/steal-conditional/conditional"
+    ],
+    "plugins": [
+      "done-css",
+      "done-component",
+      "steal-less",
+      "steal-stache"
+    ],
+    "envs": {
+      "server-production": {
+        "renderingBaseURL": "/dist"
+      }
+    },
+    "serviceBaseURL": ""
   },
-  "homepage": "https://github.com/kevcom/devjournal#readme"
+  "dependencies": {
+    "can-component": "^4.0.2",
+    "can-connect": "^2.0.2",
+    "can-define": "^2.0.1",
+    "can-route": "^4.1.0",
+    "can-route-pushstate": "^4.0.1",
+    "can-set": "^1.5.1",
+    "can-stache": "^4.1.0",
+    "can-stache-route-helpers": "<2.0.0",
+    "can-view-autorender": "^4.0.0",
+    "can-zone": "^0.6.13",
+    "done-autorender": "^2.0.0",
+    "done-component": "^2.0.0",
+    "done-css": "^3.0.2",
+    "done-serve": "^2.0.0",
+    "generator-donejs": "^2.1.0",
+    "steal": "^1.6.5",
+    "steal-less": "^1.2.2",
+    "steal-stache": "^4.0.1"
+  },
+  "devDependencies": {
+    "can-debug": "^1.0.0",
+    "can-fixture": "^2.0.2",
+    "donejs-cli": "^2.0.0",
+    "funcunit": "^3.2.0",
+    "steal-conditional": "^1.0.0",
+    "steal-qunit": "^1.0.1",
+    "steal-tools": "^1.11.3",
+    "testee": "^0.7.0"
+  },
+  "license": "MIT"
 }

@@ -1,0 +1,1 @@
+import './can-diff-test';
