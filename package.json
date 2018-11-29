@@ -1,0 +1,25 @@
+{
+  "name": "devjournal",
+  "version": "0.0.1",
+  "description": "simple daily journal for developers who love markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kevcom/devjournal.git"
+  },
+  "keywords": [
+    "developer",
+    "journal",
+    "devjournal",
+    "markdown"
+  ],
+  "author": "Kevin Carmona-Murphy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevcom/devjournal/issues"
+  },
+  "homepage": "https://github.com/kevcom/devjournal#readme"
+}
