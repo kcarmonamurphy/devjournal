@@ -9,11 +9,13 @@ export const ViewModel = DefineMap.extend({
   message: {
     default: 'This is the markdown-editor component'
   },
+
   markdown: {
-  	get() {
-  		return new showdown.Converter().makeHtml('# hey there #');
+  	get(lastValueSet) {
+  		return lastValueSet;
   	}
   }
+
 });
 
 export default Component.extend({
