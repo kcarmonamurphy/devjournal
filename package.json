@@ -17,7 +17,9 @@
     "test": "testee test.html --browsers firefox --reporter Spec",
     "start": "done-serve --port 8080",
     "develop": "done-serve --develop --port 8080",
-    "build": "node build"
+    "build": "node build",
+    "deploy": "firebase deploy",
+    "deploy:ci": "firebase deploy --token \"$FIREBASE_TOKEN\""
   },
   "main": "devjournal/index.stache!done-autorender",
   "files": [
@@ -48,7 +50,7 @@
     ],
     "envs": {
       "server-production": {
-        "renderingBaseURL": "/dist"
+        "renderingBaseURL": "https://devjournal-firebase.firebaseapp.com/"
       }
     },
     "serviceBaseURL": ""
@@ -68,6 +70,7 @@
     "done-component": "^2.0.0",
     "done-css": "^3.0.2",
     "done-serve": "^2.0.0",
+    "donejs-firebase": "^1.0.1",
     "firebase": "^5.6.0",
     "generator-donejs": "^2.1.0",
     "showdown": "^1.9.0",
@@ -79,6 +82,7 @@
     "can-debug": "^1.0.0",
     "can-fixture": "^2.0.2",
     "donejs-cli": "^2.0.0",
+    "firebase-tools": "^6.1.1",
     "funcunit": "^3.2.0",
     "steal-conditional": "^1.0.0",
     "steal-qunit": "^1.0.1",

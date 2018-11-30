@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "firebase": "devjournal-firebase",
+    "public": "./dist",
+    "headers": [
+      {
+        "source": "/**",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      }
+    ]
+  }
+}

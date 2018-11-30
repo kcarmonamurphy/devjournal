@@ -3,12 +3,7 @@ import route from 'can-route';
 import 'can-route-pushstate';
 import 'can-debug#?./is-dev';
 
-// This import loads the firebase namespace along with all its type information.
-import * as firebase from 'firebase/app';
-
-// These imports load individual services into the firebase namespace.
-import 'firebase/auth';
-import 'firebase/database';
+import firebase from 'firebase';
 
 // Initialize Firebase
 let config = {
@@ -28,6 +23,8 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var token = result.credential.accessToken;
   // The signed-in user info.
   var user = result.user;
+
+  console.log(user);
   // ...
 }).catch(function(error) {
   // Handle Errors here.
@@ -37,6 +34,8 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var email = error.email;
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
+
+  console.log(errorCode);
   // ...
 });      
 
