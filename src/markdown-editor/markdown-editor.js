@@ -5,15 +5,28 @@ import view from './markdown-editor.stache';
 
 import showdown from 'showdown';
 
+const template = `### edit me
+*i'm markdown*
+- make a list
+1. maybe it's numbered`;
+
 export const ViewModel = DefineMap.extend({
-  message: {
-    default: 'This is the markdown-editor component'
+  htmloutput: {
+    default: () => {
+        return new showdown.Converter().makeHtml(template);
+    }
   },
 
   markdown: {
-  	get(lastValueSet) {
-  		return lastValueSet;
-  	}
+    default: () => {
+        return template;
+    }
+  },
+
+  convertMarkdown() {
+    let markdown = document.querySelector('#markdown-editor-textarea').value;
+    let html = new showdown.Converter().makeHtml(markdown);
+    this.htmloutput = html;
   }
 
 });

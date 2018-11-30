@@ -10,8 +10,11 @@ const AppViewModel = DefineMap.extend({
     default: () => ({NODE_ENV:'development'}),
     serialize: false
   },
-  message: {
-    default: 'Hello World!',
+  date: {
+    default: () => {
+      let datestring = new Date(Date.now()).toISOString();
+      return datestring.substring(0, datestring.indexOf('T'));
+    },
     serialize: false
   },
   title: {
@@ -19,18 +22,9 @@ const AppViewModel = DefineMap.extend({
     serialize: false
   },
 
-
-  markdown: {
-
-  },
-
   htmloutput: {
-    default: 'HTML output will appear here',
-    get() {
-      return new showdown.Converter().makeHtml(this.markdown);
-    }
+    serialize: false
   }
-
 });
 
 export default AppViewModel;

@@ -12,6 +12,11 @@ html, body {
     height: 100%;
 }
 
+.date {
+    color: #aca;
+    margin-left: 20px;
+}
+
 markdown-editor {
     grid-area: editor;
     background-color: #ddd;
@@ -22,12 +27,17 @@ markdown-editor {
         margin: 0;
         padding: 20px;
         border: 0;
-        font-size: 16px;
+        font-size: 18px;
+        line-height: 1.5;
+
+        &:focus {
+            outline: none;
+        }
     }
 }
 html-preview {
     grid-area: preview;
-    background-color: red;
+    background-color: #f6f6f6;
     word-break: break-all;
     padding: 0 20px;
 }

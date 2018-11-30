@@ -1,1 +1,5 @@
-<textarea value:to="markdown" />
+<textarea id="markdown-editor-textarea"
+	on:keyup='convertMarkdown()'
+	on:paste='convertMarkdown()'
+	value:from="./markdown"
+/>
