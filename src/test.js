@@ -7,6 +7,8 @@ import '~/markdown-editor/markdown-editor-test';
 
 import '~/components/html-preview/html-preview-test';
 
+import '~/components/login-button/login-button-test';
+
 F.attach(QUnit);
 
 QUnit.module('devjournal functional smoke test', {
