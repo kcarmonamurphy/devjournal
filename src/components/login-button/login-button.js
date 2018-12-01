@@ -10,15 +10,6 @@ import * as firebaseConfig from '~/env/firebase.json';
 console.log(firebaseConfig);
 
 let config = firebaseConfig;
-// Initialize Firebase
-// let config = {
-//   apiKey: "AIzaSyBMytsk6g3a1fQUthluL9RnZZzAsz40Kw0",
-//   authDomain: "devjournal-firebase.firebaseapp.com",
-//   databaseURL: "https://devjournal-firebase.firebaseio.com",
-//   projectId: "devjournal-firebase",
-//   storageBucket: "devjournal-firebase.appspot.com",
-//   messagingSenderId: "259340547619"
-// };
 firebase.initializeApp(config);
 
 let provider = new firebase.auth.GithubAuthProvider();
