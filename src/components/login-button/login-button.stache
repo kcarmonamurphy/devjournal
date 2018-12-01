@@ -1,1 +1,25 @@
-<button>Login bro</button>
+{{#if ./currentUser}}
+	<a class="profile-button" on:click="./toggleDropdown()">
+		<img class="avatar" src={{./currentUser.photoURL}} />
+		<span class="name">{{./currentUser.displayName}}</span>
+		<span class="chevron bottom"></span>
+	</a>
+	{{#if ./dropdownOpen}}
+	<div class="profile-dropdown">
+		<a>View journal log entries</a>
+		<a>View profile</a>
+		<a on:click="./signOut()">Log out</a>
+	</div>
+	{{/if}}
+{{else}}
+	<a class="profile-button" on:click="./toggleDropdown()">
+		<img class="avatar" src="/src/assets/anonymous.jpg" />
+		<span class="name">Anonymous User</span>
+		<span class="chevron bottom"></span>
+	</a>
+	{{#if ./dropdownOpen}}
+		<div class="profile-dropdown">
+			<a on:click="./signIn()">Sign in with GitHub</a>
+		</div>
+	{{/if}}
+{{/if}}
