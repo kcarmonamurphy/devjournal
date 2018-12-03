@@ -19,6 +19,7 @@
 
       <markdown-editor 
         htmloutput:to="./htmloutput"
+        date:from="./date"
       />
       <html-preview
         htmloutput:from="./htmloutput"

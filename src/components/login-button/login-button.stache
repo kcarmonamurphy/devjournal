@@ -2,7 +2,7 @@
 	<a class="profile-button" on:click="./toggleDropdown()">
 		<img class="avatar" src={{./currentUser.photoURL}} />
 		<span class="name">{{./currentUser.displayName}}</span>
-		<span class="chevron bottom"></span>
+		<span class="chevron {{#if ./dropdownOpen}}top{{else}}bottom{{/if}}"></span>
 	</a>
 	{{#if ./dropdownOpen}}
 	<div class="profile-dropdown">
@@ -15,7 +15,7 @@
 	<a class="profile-button" on:click="./toggleDropdown()">
 		<img class="avatar" src="/src/assets/anonymous.jpg" />
 		<span class="name">Anonymous User</span>
-		<span class="chevron bottom"></span>
+		<span class="chevron {{#if ./dropdownOpen}}top{{else}}bottom{{/if}}"></span>
 	</a>
 	{{#if ./dropdownOpen}}
 		<div class="profile-dropdown">

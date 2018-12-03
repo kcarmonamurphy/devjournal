@@ -5,10 +5,6 @@ import view from './login-button.stache';
 
 import {firebase, config, provider} from '~/firebase-initialize';
 
-// console.log(firebase, config, provider);
-
-
-
 export const ViewModel = DefineMap.extend({
   anchor: {
     default: 'Log in'
