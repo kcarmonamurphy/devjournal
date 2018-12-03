@@ -35,15 +35,23 @@ export const ViewModel = DefineMap.extend({
       } else {
         // if logged out, clean up markdown textarea and html preview
         this.currentUser = null;
-        this.markdown = template;
-        this.htmloutput = new showdown.Converter().makeHtml(template);
+        this.loadDefaultMarkdown();
       }
     });
   },
 
+  loadDefaultMarkdown() {
+    this.markdown = template;
+    this.htmloutput = new showdown.Converter().makeHtml(template);
+  },
+
   loadMarkdownFromFirebase() {
     firebase.database().ref(`posts/${this.currentUser.uid}/${this.date}`).once('value').then((snapshot) => {
-      this.markdown = snapshot.val().entry
+      if (snapshot.val()) {
+        this.markdown = snapshot.val().entry
+      } else {
+        this.loadDefaultMarkdown();
+      }
     });
   },
 

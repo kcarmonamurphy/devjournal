@@ -9,6 +9,9 @@ const AppViewModel = DefineMap.extend({
     serialize: false
   },
 
+  page: 'string',
+
+
   date: {
     default: () => {
       let datestring = new Date(Date.now()).toISOString();
@@ -32,4 +35,12 @@ const AppViewModel = DefineMap.extend({
  
 });
 
+route.register("/", { page: "today" });
+route.register("logs", { page: "logs" });
+route.register("logs/{date}", { page: "logview"});
+route.register("profile", { page: "profile" });
+
+route.start();
+
 export default AppViewModel;
+

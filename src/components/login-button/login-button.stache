@@ -6,8 +6,8 @@
 	</a>
 	{{#if ./dropdownOpen}}
 	<div class="profile-dropdown">
-		<a>View journal log entries</a>
-		<a>View profile</a>
+		<a href="{{ routeUrl(page='logs') }}">View journal log entries</a>
+		<a href="{{ routeUrl(page='profile'}}">View profile</a>
 		<a on:click="./signOut()">Log out</a>
 	</div>
 	{{/if}}
