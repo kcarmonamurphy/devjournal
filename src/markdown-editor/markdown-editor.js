@@ -12,40 +12,38 @@ const template = `### edit me
 - make a list
 1. maybe it's numbered`;
 
-// Get a reference to the database service
-var database = firebase.database();
 
 export const ViewModel = DefineMap.extend({
   htmloutput: {
-    default: () => {
-        return new showdown.Converter().makeHtml(template);
+    get() {
+      return new showdown.Converter().makeHtml(this.markdown);
     }
   },
 
-  markdown: {
-    default: () => {
-      return template;
-    }
-  },
+  markdown: {},
 
   date: {},
 
   currentUser: {},
 
   init() {
-    let database = firebase.database();
-
     firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            this.currentUser = user;
+      if (user) {
+        // if logged in, grab saved markdown from database
+        this.currentUser = user;
+        this.loadMarkdownFromFirebase();
+      } else {
+        // if logged out, clean up markdown textarea and html preview
+        this.currentUser = null;
+        this.markdown = template;
+        this.htmloutput = new showdown.Converter().makeHtml(template);
+      }
+    });
+  },
 
-            firebase.database().ref(`posts/${this.currentUser.uid}/${this.date}`).once('value').then((snapshot) => {
-              this.markdown = snapshot.val().entry
-            });
-
-        } else {
-            this.currentUser = null;   
-        }
+  loadMarkdownFromFirebase() {
+    firebase.database().ref(`posts/${this.currentUser.uid}/${this.date}`).once('value').then((snapshot) => {
+      this.markdown = snapshot.val().entry
     });
   },
 
@@ -55,7 +53,6 @@ export const ViewModel = DefineMap.extend({
     this.markdown = document.querySelector('#markdown-editor-textarea').value;
 
     this.saveToFirebase();
-    this.convertMarkdown();
   },
 
   saveToFirebase() {
@@ -64,11 +61,6 @@ export const ViewModel = DefineMap.extend({
           entry: this.markdown
       });
     }
-  },
-
-  convertMarkdown() {
-    let html = new showdown.Converter().makeHtml(this.markdown);
-    this.htmloutput = html;
   }
 
 });

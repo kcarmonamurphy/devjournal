@@ -10,9 +10,7 @@ export const ViewModel = DefineMap.extend({
     default: 'Log in'
   },
 
-  currentUser: {
-  	default: null
-  },
+  currentUser: {},
 
   dropdownOpen: {},
 
@@ -24,7 +22,6 @@ export const ViewModel = DefineMap.extend({
   	firebase.auth().onAuthStateChanged((user) => {
   		if (user) {
     		this.currentUser = user;
-    		console.log(user);
   		} else {
     		this.currentUser = null;
   		}
@@ -32,22 +29,12 @@ export const ViewModel = DefineMap.extend({
   },
 
   signOut() {
-  	firebase.auth().signOut().then(() => {
-  		this.currentUser = null;
-  	});
+  	firebase.auth().signOut();
   },
 
   signIn() {
   	firebase.auth().signInWithPopup(provider).then(function(result) {
-	  // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-	  var token = result.credential.accessToken;
-	  // The signed-in user info.
-	  var user = result.user;
-
-	  this.anchor = user.displayName;
-
-	  console.log(user);
-	  // ...
+	  this.anchor = result.user.displayName;
 	}).catch(function(error) {
 	  // Handle Errors here.
 	  var errorCode = error.code;

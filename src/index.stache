@@ -17,9 +17,9 @@
 
     <div class="view-container">
 
-      <markdown-editor 
+      <markdown-editor
+         date:from="./date"
         htmloutput:to="./htmloutput"
-        date:from="./date"
       />
       <html-preview
         htmloutput:from="./htmloutput"

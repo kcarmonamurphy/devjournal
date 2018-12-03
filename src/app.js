@@ -3,13 +3,12 @@ import route from 'can-route';
 import 'can-route-pushstate';
 import 'can-debug#?./is-dev';
 
-
-
 const AppViewModel = DefineMap.extend({
   env: {
     default: () => ({NODE_ENV:'development'}),
     serialize: false
   },
+
   date: {
     default: () => {
       let datestring = new Date(Date.now()).toISOString();
@@ -17,6 +16,7 @@ const AppViewModel = DefineMap.extend({
     },
     serialize: false
   },
+
   title: {
     default: 'devjournal',
     serialize: false
@@ -24,7 +24,12 @@ const AppViewModel = DefineMap.extend({
 
   htmloutput: {
     serialize: false
+  },
+
+  currentUser: {
+    serialize: false,
   }
+ 
 });
 
 export default AppViewModel;
