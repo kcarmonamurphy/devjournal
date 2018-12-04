@@ -3,8 +3,6 @@ import DefineMap from 'can-define/map/';
 import './login-button.less';
 import view from './login-button.stache';
 
-import stache from "can-stache-route-helpers";
-
 import {firebase, config, provider} from '~/firebase-initialize';
 
 export const ViewModel = DefineMap.extend({

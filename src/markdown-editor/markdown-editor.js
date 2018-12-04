@@ -20,7 +20,11 @@ export const ViewModel = DefineMap.extend({
     }
   },
 
-  markdown: {},
+  markdown: {
+    default() {
+      return template;
+    }
+  },
 
   date: {},
 

@@ -1,0 +1,4 @@
+{{#each ./posts}}
+	<a href="logs/{{scope.key}}">{{scope.key}}</a>
+	<p>{{./entry}}</p>
+{{/each}}

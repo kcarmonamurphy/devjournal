@@ -3,13 +3,17 @@ import route from 'can-route';
 import 'can-route-pushstate';
 import 'can-debug#?./is-dev';
 
+import stache from "can-stache-route-helpers";
+
 const AppViewModel = DefineMap.extend({
   env: {
     default: () => ({NODE_ENV:'development'}),
     serialize: false
   },
 
-  page: 'string',
+  page: {
+    serialize: false
+  },
 
 
   date: {
@@ -36,6 +40,7 @@ const AppViewModel = DefineMap.extend({
 });
 
 route.register("/", { page: "today" });
+route.register("/today", { page: "today" });
 route.register("logs", { page: "logs" });
 route.register("logs/{date}", { page: "logview"});
 route.register("profile", { page: "profile" });

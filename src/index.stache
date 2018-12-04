@@ -9,6 +9,7 @@
     <can-import from="~/markdown-editor/" />
     <can-import from="~/components/html-preview/" />
     <can-import from="~/components/login-button/" />
+    <can-import from="~/components/view-logs/" />
 
     {{#switch(page)}}
 
@@ -20,7 +21,7 @@
 
             <div class="view-container">
               <markdown-editor
-                 date:from="./date"
+                date:from="./date"
                 htmloutput:to="./htmloutput"
               />
               <html-preview
@@ -31,6 +32,7 @@
 
         {{#case("logs")}}
             <h1>logs</h1>
+            <view-logs />
         {{/case}}
 
         {{#case("logview")}}

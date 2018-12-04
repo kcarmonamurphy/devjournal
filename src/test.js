@@ -9,6 +9,8 @@ import '~/components/html-preview/html-preview-test';
 
 import '~/components/login-button/login-button-test';
 
+import '~/components/view-logs/view-logs-test';
+
 F.attach(QUnit);
 
 QUnit.module('devjournal functional smoke test', {
