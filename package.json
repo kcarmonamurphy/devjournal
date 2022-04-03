@@ -50,7 +50,7 @@
     ],
     "envs": {
       "server-production": {
-        "renderingBaseURL": "https://devjournal-firebase.firebaseapp.com/"
+        "renderingBaseURL": "https://devjournal-firebase-1.firebaseapp.com/"
       }
     },
     "serviceBaseURL": ""
@@ -82,7 +82,7 @@
     "can-debug": "^1.0.0",
     "can-fixture": "^2.0.2",
     "donejs-cli": "^2.0.0",
-    "firebase-tools": "^6.1.1",
+    "firebase-tools": "^6.12.0",
     "funcunit": "^3.2.0",
     "steal-conditional": "^1.0.0",
     "steal-qunit": "^1.0.1",

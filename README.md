@@ -1,5 +1,9 @@
 # devjournal
 
+A small Markdown-compatible notetaking application written in the no-longer maintained DoneJS stack.
+
+---
+
 Welcome to the devjournal DoneJS application!
 
 ## Getting started

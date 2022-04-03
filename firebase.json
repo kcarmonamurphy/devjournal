@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "firebase": "devjournal-firebase",
+    "firebase": "devjournal-firebase-1",
     "public": "./dist",
     "headers": [
       {

@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import * as firebaseConfig from '~/env/firebase.json';
+import * as firebaseConfig from './env/firebase.json';
 
 firebase.initializeApp(firebaseConfig);
 
